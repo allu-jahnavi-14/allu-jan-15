@@ -14,7 +14,7 @@ class Indexer(object):
         self.connection = lmdb.open(self.output_path, map_size=64 * 1024 * 1024 * 1024)
         self.feature_extractor = FeatureExtractor(config["path_to_deploy_file"], config["path_to_model_file"],
                                                   input_layer_name=self.input_layer)
-        self.image_paths = image_paths
+        self.image_paths = image_pathsss
 
     def index(self, batch_size, start_index=0, stop_index=None):
         batches = [self.image_paths[x:x + batch_size] for x in range(0, len(self.image_paths), batch_size)]
